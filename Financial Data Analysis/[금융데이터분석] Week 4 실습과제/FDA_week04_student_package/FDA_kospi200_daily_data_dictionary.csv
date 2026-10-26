@@ -1,0 +1,18 @@
+﻿variable,korean_name,description,pandas_dtype,logical_type,unit,missing_allowed,notes
+Date,거래일,특정 종목의 일별 거래 관측일,datetime64[ns],date,,NO,한 행의 관측 단위는 Date × Symbol
+Symbol,종목코드,한국 주식 6자리 종목코드,string,string,,NO,항상 6자리 문자열로 사용
+Name,종목명,해당 종목의 기업명,object,string,,NO,
+Open,시가,해당 거래일의 시가,float64,numeric,KRW,NO,원주가
+High,고가,해당 거래일의 고가,float64,numeric,KRW,NO,원주가
+Low,저가,해당 거래일의 저가,float64,numeric,KRW,NO,원주가
+Close,종가,해당 거래일의 종가,float64,numeric,KRW,NO,당시 실제 시장가격 확인용
+AdjustedClose,수정종가,주식분할·병합 등 기업행동을 반영한 수정주가,float64,numeric,KRW-equivalent,NO,기술적 분석 및 기간간 가격비교의 기본 가격
+AdjustedReturnPct,수정수익률,수정주가 기준 일별 수익률,float64,numeric,percent,YES,decimal return은 100으로 나누어 사용
+AdjustedClose_TotalReturn,총수익 수정주가,현금배당을 포함하도록 조정한 총수익 가격계열,float64,numeric,index-like adjusted price,NO,장기 투자성과 비교에 사용
+AdjustedReturn_TotalReturn_Pct,총수익률,주가 변화와 현금배당을 포함한 일별 투자수익률,float64,numeric,percent,YES,배당 포함 투자성과 분석에 사용
+Volume,거래량,해당 거래일의 거래량,float64,numeric,shares,NO,
+TradingValue,거래대금,해당 거래일의 거래대금,float64,numeric,source-defined KRW unit,NO,원자료 단위 확인 필요
+SharesOutstanding_Ticker,상장주식수,해당 종목의 상장주식수,int64,numeric,shares,NO,
+MarketCap_MillionKRW,시가총액,해당 종목의 시가총액,float64,numeric,million KRW,NO,단위는 백만원
+KOSPI200_Member,KOSPI200 구성 여부,해당 월의 KOSPI200 point-in-time 구성종목 여부,int64,integer,0/1,NO,학생용 파일에서는 항상 1
+MembershipMonth,구성종목 기준월,KOSPI200 membership을 적용한 월,object,string,YYYY-MM,NO,현재 구성종목의 과거 소급 사용 금지
